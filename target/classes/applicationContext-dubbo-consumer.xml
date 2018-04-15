@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    	http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://code.alibabatech.com/schema/dubbo
+		http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<!-- 配置应用名字 -->
+	<dubbo:application id="accountCommonDubboAppliaction" name="dubbo-consumer" />
+
+	<!-- 引用 id=helloService 远程bean -->
+	<!-- url 告诉调用哪个url，如果用注册中心就不用url了 -->
+	<dubbo:reference id="helloService1" interface="com.mall.dubbo.service.HelloService" url="dubbo://localhost:20880" />
+
+</beans>
